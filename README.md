@@ -23,9 +23,9 @@ sudo nano /etc/config.json
 ```
 ```
 {
-        "MAIL_USERNAME":"email",
-        "MAIL_PASSWORD":"password",
-        "MAIL_DEFAULT_SENDER":"email",
+        "EMAIL_USER":"email",
+        "EMAIL_PASS":"password",
+        "EMAIL_DEFAULT_SENDER":"email",
         "LINODE_TOKEN":"token"
 }
 ```
@@ -75,7 +75,7 @@ N/a
 * linode_api4
 
 ## Authors
-* **Harry Liu**
+* Harry Liu
 
 ## Acknowledgements
 * Script built based on [this Flask script](https://github.com/CoreyMSchafer/code_snippets/blob/master/Python/Site-Monitor/monitor.py) from YouTube by [Corey Scafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g).
