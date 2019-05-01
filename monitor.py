@@ -65,7 +65,7 @@ for website in WEBSITES:
         if r.status_code != 200:
             logging.info(f'{website["name"]} is DOWN!')
             notify_user()
-            reboot_server()\
+            reboot_server()
         else:
             logging.info(f'{website["name"]} is UP')
     except Exception as e:
