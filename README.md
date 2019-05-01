@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Setup configuration file for email services and your linode token.
 ```
-sudo nano /etc/config.json
+sudo nano ~/.bash_config
 ```
 ```
 {
