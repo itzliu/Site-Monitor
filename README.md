@@ -11,7 +11,7 @@ Python script to monitor websites and email you if the site is down.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-* Python3.7
+* Python3.6+
 * pip3
 
 ### Installing
