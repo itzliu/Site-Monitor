@@ -54,9 +54,13 @@ pip install linode_api4
 To automate this script to check your websites you can do the following.
 
 Find Python environment path. (something like '~/Site-Monitor/monitor_env/bin/python')
-```which python```
+```
+which python
+```
 Open cron
-```crontab -e```
+```
+crontab -e
+```
 Press 'i' to enter edit mode and add the cron script.
 ```
 */10 * * * * [environement path] [monotor.py path]
