@@ -23,9 +23,9 @@ sudo nano /etc/config.json
 ```
 ```
 {
-        "EMAIL_USER":"email",
-        "EMAIL_PASS":"password",
-        "EMAIL_DEFAULT_SENDER":"email",
+        "MAIL_USERNAME":"email",
+        "MAIL_PASSWORD":"password",
+        "MAIL_DEFAULT_SENDER":"email",
         "LINODE_TOKEN":"token"
 }
 ```
@@ -47,7 +47,8 @@ source monitor_env/bin/activate
 ```
 Install the Pyhon dependencies.
 ```
-pip install -r requirements.txt
+pip install requests
+pip install linode_api4
 ```
 
 To automate this script to check your websites you can do the following.
