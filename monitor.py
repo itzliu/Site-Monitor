@@ -9,7 +9,7 @@ from linode_api4 import LinodeClient, Instance
 WEBSITES = [
     {
         'name': 'iamharryliu',
-        'url': 'https://www.iamharryliu.cosadfm/',
+        'url': 'https://www.iamharryliu.com/',
         'linode-server': 'flask-server'
     },
     {
@@ -47,13 +47,13 @@ def reboot_server():
         reboot_linode_server()
 
 def reboot_linode_server():
-    server_id = get_linode_server_id()
+    client = LinodeClient(LINODE_TOKEN)
+    server_id = get_linode_server_id(client)
     my_server = client.load(Instance, server_id)
     my_server.reboot()
     logging.info('Attempting to reboot server...')
 
-def get_linode_server_id():
-    client = LinodeClient(LINODE_TOKEN)
+def get_linode_server_id(client):
     for linode in client.linode.instances():
         if linode.label == website['linode-server']:
             server_id = linode.id
