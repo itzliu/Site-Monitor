@@ -15,7 +15,6 @@ These instructions will get you a copy of the project up and running on your loc
 * pip3
 
 ### Installing
-A step by step set of instructions to get a development environment running.
 
 Setup configuration file for email services and your linode token.
 ```
