@@ -26,9 +26,9 @@ EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 EMAIL_DEFAULT_SENDER = os.environ.get('EMAIL_DEFAULT_SENDER')
 LINODE_TOKEN = os.environ.get('LINODE_TOKEN')
 
-logging.basicConfig(filename='log.log',
+logging.basicConfig(filename='/tmp/logs/site-monitor.log',
                     level=logging.INFO,
-                    format='%(asctime)s:%(levelname)s:%(message)s')
+                    format='%(asctime)s\t%(levelname)s\t%(message)s')
 
 def notify_user():
     with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
