@@ -2,7 +2,7 @@
 Python script to monitor websites and email you if the site is down.
 
 ## What I Learned
-* How to build a script to monitor website.
+* How to write a script to monitor my websites.
 * How to use smtplib to send emails.
 * How to interact with Linode servers through Linode API.
 * Logging Basics
@@ -38,11 +38,11 @@ cd Site-Monitor
 ```
 Create a virtual environment for the app.
 ```
-python3 -m venv monitor_env
+python3 -m venv venv
 ```
 Activate your virtual environment.
 ```
-source monitor_env/bin/activate
+source venv/bin/activate
 ```
 Install the Pyhon dependencies.
 ```
