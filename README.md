@@ -1,4 +1,4 @@
-# Site-Monitor
+# Site Monitor
 Python script to monitor websites and email you if the site is down.
 
 ## What I Learned
@@ -30,7 +30,7 @@ sudo nano ~/.bash_config
 ```
 Clone the repository onto your machine.
 ```
-git clone https://github.com/itzliu/Site-Monitor.git
+git clone https://github.com/itzliu/site-monitor.git
 ```
 Change directory into the project directory folder.
 ```
@@ -52,7 +52,7 @@ pip install linode_api4
 
 To automate this script to check your websites you can do the following.
 
-Find Python environment path. (something like '~/Site-Monitor/monitor_env/bin/python')
+Find Python environment path. (something like '~/Site-Monitor/venv/bin/python')
 ```
 which python
 ```
@@ -60,7 +60,7 @@ Open cron
 ```
 crontab -e
 ```
-Press 'i' to enter edit mode and add the cron script.
+Press 'i' to enter edit mode and add the cron script (checks websites every 10 minutes).
 ```
 */10 * * * * [environement path] [monotor.py path]
 ```
