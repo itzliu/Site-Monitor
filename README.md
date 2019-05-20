@@ -34,7 +34,7 @@ git clone https://github.com/itzliu/site-monitor.git
 ```
 Change directory into the project directory folder.
 ```
-cd Site-Monitor
+cd site-monitor
 ```
 Create a virtual environment for the app.
 ```
