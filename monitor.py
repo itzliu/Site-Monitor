@@ -3,8 +3,9 @@ import smtplib
 import requests
 import logging
 from linode_api4 import LinodeClient, Instance
+from pathlib import Path
 
-# Specify website name, url, and linode-server.
+# Specify websites and their name, url, and server.
 
 WEBSITES = [
     {
@@ -12,21 +13,13 @@ WEBSITES = [
         'url': 'https://www.iamharryliu.com/',
         'linode-server': 'flask-server'
     },
-    {
-        'name' : 'Google',
-        'url' : 'https://www.google.ca/', 
-    },
-    {
-        'name' : 'Youtube',
-        'url' : 'https://www.youtube.com/'
-    }
 ]
 EMAIL_ADDRESS = os.environ.get('EMAIL_USER')
-EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_PASSWORD = os.environ.get('GOOGLE_APP_PASS')
 EMAIL_DEFAULT_SENDER = os.environ.get('EMAIL_DEFAULT_SENDER')
 LINODE_TOKEN = os.environ.get('LINODE_TOKEN')
 
-logging.basicConfig(filename='/tmp/logs/site-monitor.log',
+logging.basicConfig(filename=f'{Path.home()}/logs/site-monitor.log',
                     level=logging.INFO,
                     format='%(asctime)s\t%(levelname)s\t%(message)s')
 
