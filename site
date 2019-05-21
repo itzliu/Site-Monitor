@@ -1,19 +1,17 @@
 import os
+import json
 import smtplib
 import requests
 import logging
 from linode_api4 import LinodeClient, Instance
 from pathlib import Path
 
+
 # Specify websites and their name, url, and server.
 
-WEBSITES = [
-    {
-        'name': 'iamharryliu',
-        'url': 'https://www.iamharryliu.com/',
-        'linode-server': 'flask-server'
-    },
-]
+with open('/etc/sites.json') as f:
+    SITES = json.load(f)
+
 EMAIL_ADDRESS = os.environ.get('EMAIL_USER')
 EMAIL_PASSWORD = os.environ.get('GOOGLE_APP_PASS')
 EMAIL_DEFAULT_SENDER = os.environ.get('EMAIL_DEFAULT_SENDER')
@@ -52,16 +50,16 @@ def get_linode_server_id(client):
             server_id = linode.id
     return server_id
 
-for website in WEBSITES:
+for site in SITES:
     try:
-        r = requests.get(website['url'], timeout=5)
+        r = requests.get(site['url'], timeout=5)
         if r.status_code != 200:
-            logging.info(f'{website["name"]} is DOWN!')
+            logging.info(f'{site["name"]} is DOWN!')
             notify_user()
             reboot_server()
         else:
-            logging.info(f'{website["name"]} is UP')
+            logging.info(f'{site["name"]} is UP')
     except Exception as e:
-        logging.info(f'{website["name"]} is DOWN!')
+        logging.info(f'{site["name"]} is DOWN!')
         notify_user()
         reboot_server()
