@@ -69,9 +69,6 @@ Add this to the cron script to run the monitor script every 10 minutes.
 */10 * * * * . $HOME/.bash_config && [environement path] [monotor.py path]
 ```
 
-## Running Tests
-N/a
-
 ## Authors
 * Harry Liu
 
