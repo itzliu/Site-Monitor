@@ -10,7 +10,7 @@ from pathlib import Path
 # Specify websites and their name, url, and server.
 
 with open('/etc/sites.json') as f:
-    SITES = json.load(f)
+    websites = json.load(f)
 
 EMAIL_ADDRESS = os.environ.get('EMAIL_USER')
 EMAIL_PASSWORD = os.environ.get('GOOGLE_APP_PASS')
@@ -50,16 +50,16 @@ def get_linode_server_id(client):
             server_id = linode.id
     return server_id
 
-for site in SITES:
+for website in websites:
     try:
-        r = requests.get(site['url'], timeout=5)
+        r = requests.get(website['url'], timeout=5)
         if r.status_code != 200:
-            logging.info(f'{site["name"]} is DOWN!')
+            logging.info(f'{website["name"]} is DOWN!')
             notify_user()
             reboot_server()
         else:
-            logging.info(f'{site["name"]} is UP')
+            logging.info(f'{website["name"]} is UP')
     except Exception as e:
-        logging.info(f'{site["name"]} is DOWN!')
+        logging.info(f'{website["name"]} is DOWN!')
         notify_user()
         reboot_server()
