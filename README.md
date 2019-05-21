@@ -1,18 +1,19 @@
 # Site Monitor
-Python script to monitor websites and email you if the site is down.
+Python script to monitor websites. If a server is found to be down a email will be sent to the specified user and the server will be reset. Script is currently for use with only Linode servers but compatability with other service provider APIs can be added.
 
-## What I Learned
-* How to write a script to monitor my websites.
-* How to use smtplib to send emails.
-* How to interact with Linode servers through Linode API.
-* Logging Basics
+## Utilizes
+* Cron
+* Linode API
+* Python SMTP Library
+* Logging
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine.
 
-### Prerequisites
+### Requirements
 * Python3.6+
 * pip3
+* Google App Password https://myaccount.google.com/apppasswords
 
 ### Installing
 
@@ -23,8 +24,7 @@ sudo nano ~/.bash_config
 ```
 {
         "MAIL_USERNAME":"email",
-        "MAIL_PASSWORD":"password",
-        "MAIL_DEFAULT_SENDER":"email",
+        "MAIL_PASSWORD":"google app password",
         "LINODE_TOKEN":"token"
 }
 ```
@@ -49,10 +49,14 @@ Install the Pyhon dependencies.
 pip install requests
 pip install linode_api4
 ```
+Run script.
+```
+python monitor.py
+```
 
-To automate this script to check your websites you can do the following.
+To automate this script to check your websites periodically you can do the following.
 
-Find Python environment path. (something like '~/Site-Monitor/venv/bin/python')
+Find Python environment path. (something like '~/site-monitor/venv/bin/python')
 ```
 which python
 ```
@@ -60,20 +64,13 @@ Open cron
 ```
 crontab -e
 ```
-Press 'i' to enter edit mode and add the cron script (checks websites every 10 minutes).
+Add this to the cron script to run the monitor script every 10 minutes.
 ```
-*/10 * * * * [environement path] [monotor.py path]
+*/10 * * * * . $HOME/.bash_config && [environement path] [monotor.py path]
 ```
-Press 'Esc' to exit edit mode and type in ':wq' to write and quit.
 
 ## Running Tests
 N/a
-
-## Built With
-* smtplib
-* requests
-* logging
-* linode_api4
 
 ## Authors
 * Harry Liu
