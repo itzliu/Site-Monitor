@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Requirements
 * Python3.6+
 * pip3
-* Google App Password https://myaccount.google.com/apppasswords
+* Google App Password: https://myaccount.google.com/apppasswords
 
 ### Installing
 
