@@ -10,8 +10,7 @@ class LinodeAPI:
         client = LinodeClient(LINODE_TOKEN)
         server_id = LinodeAPI.get_linode_server_id(client, server)
         my_server = client.load(Instance, server_id)
-        my_server.reboot()
-        logging.info('Attempting to reboot server...')
+        # my_server.reboot()
 
     def get_linode_server_id(client, server):
         linodes = client.linode.instances()
