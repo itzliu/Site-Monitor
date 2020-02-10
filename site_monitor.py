@@ -17,7 +17,6 @@ class SiteMonitor:
             SiteMonitor.check_server(server)
 
     def check_server(server):
-        SiteMonitor.handle_server_failure(server)
         try:
             r = requests.get(server['url'], timeout=5)
             if r.status_code != 200:
