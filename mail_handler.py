@@ -15,5 +15,5 @@ class MailHandler:
             smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
             subject = email["subject"]
             body = email["body"]
-            msg = f'Subject: {subject}\n\n{body}'
-            smtp.sendmail(EMAIL_ADDRESS, EMAIL_ADDRESS, msg)
+            message = f'Subject: {subject}\n\n{body}'
+            smtp.sendmail(EMAIL_ADDRESS, EMAIL_ADDRESS, message)
