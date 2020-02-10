@@ -28,29 +28,13 @@ sudo nano ~/.bash_config
         "LINODE_TOKEN":"token"
 }
 ```
-Clone the repository onto your machine.
 ```
 git clone https://github.com/itzliu/site-monitor.git
-```
-Change directory into the project directory folder.
-```
 cd site-monitor
-```
-Create a virtual environment for the app.
-```
 python3 -m venv venv
-```
-Activate your virtual environment.
-```
 source venv/bin/activate
-```
-Install the Pyhon dependencies.
-```
 pip install requests
 pip install linode_api4
-```
-Run script.
-```
 python monitor.py
 ```
 
