@@ -1,14 +1,5 @@
 # Site Monitor
-Python script to monitor websites. If a server is found to be down a email will be sent to the specified user and the server will be reset. Script is currently for use with only Linode servers but compatability with other service provider APIs can be added.
-
-## Utilizes
-* Cron
-* Linode API
-* Python SMTP Library
-* Logging
-
-## Getting Started
-These instructions will get you a copy of the project up and running on your local machine.
+Python script to monitor servers and restart Linode servers if they are down.
 
 ### Requirements
 * Python3.6+
@@ -40,21 +31,15 @@ python monitor.py
 
 To automate this script to check your websites periodically you can do the following.
 
-Find Python environment path. (something like '~/site-monitor/venv/bin/python')
+Copy Python environment path
 ```
 which python
 ```
-Open cron
+Open Cron job.
 ```
 crontab -e
 ```
-Add this to the cron script to run the monitor script every 10 minutes.
+Add cron job.
 ```
-*/10 * * * * . $HOME/.bash_config && [environement path] [monotor.py path]
+*/10 * * * * . $HOME/.bash_config && [environement path] [run.py path]
 ```
-
-## Authors
-* Harry Liu
-
-## Acknowledgements
-* Script built based on [this monitor script](https://github.com/CoreyMSchafer/code_snippets/blob/master/Python/Site-Monitor/monitor.py) from YouTube by [Corey Scafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g).
