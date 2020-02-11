@@ -1,7 +1,5 @@
 # Custom Ignore
 .vscode
-monitor_env
-*.log
 
 # Python Ignore
 
