@@ -14,8 +14,8 @@ sudo nano ~/.bash_config
 ```
 ```
 {
-        "MAIL_USERNAME":"email",
-        "MAIL_PASSWORD":"google app password",
+        "EMAIL_USERNAME":"email",
+        "EMAIL_PASSWORD":"google app password",
         "LINODE_TOKEN":"token"
 }
 ```
